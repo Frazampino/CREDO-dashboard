@@ -7,7 +7,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Define the original graph G
+
 G1 = nx.DiGraph()
 nodes_sequence = ["Task1", "Task2", "Task3", "Task4", "Task5"]
 G1.add_nodes_from(nodes_sequence)
@@ -16,7 +16,7 @@ G1.add_edges_from(edges)
 
 #
 
-# Aggiungi il nodo del gateway e i flussi
+# gateway
 gateway_node = "OR"
 incoming_flows = ["Task1"]
 outgoing_flows = ["Task2", "Task3"]
@@ -26,7 +26,7 @@ for source_node in incoming_flows:
 for target_node in outgoing_flows:
     G1.add_edge(gateway_node, target_node)
 
-# Visualizzazione del grafo
+
 plt.figure(figsize=(15, 10))
 plt.subplot(121)
 pos = nx.spring_layout(G1, k=0.9)
@@ -53,7 +53,7 @@ edges = [("Task1", "Task2"), ("Task2", "Task3"), ("Task3", "Task4"),
          ( "Task4","Task51")]
 G2.add_edges_from(edges)
 
-# Aggiungi il nodo del gateway e i flussi
+
 gateway_node = "XOR"
 incoming_flows = ["Task1"]
 outgoing_flows = ["Task2", "Task3"]
@@ -63,7 +63,7 @@ for source_node in incoming_flows:
 for target_node in outgoing_flows:
     G2.add_edge(gateway_node, target_node)
 
-# Visualizzazione del grafo
+
 plt.figure(figsize=(15, 10))
 plt.subplot(121)
 pos = nx.spring_layout(G2, k=0.9)
